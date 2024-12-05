@@ -210,7 +210,7 @@ let hotels = [
 ];
 
 app.get('/', (req, res) => {
-  res.send('Welcome to the app!!!!');
+  res.send('Welcome to TripWithUs app!!!!');
 });
 
 // Endpoint 1: Get the hotels sorted by pricing
@@ -238,11 +238,11 @@ app.get('/hotels/sort/pricing', (req, res) => {
 function sortByRating(query) {
   if (query === 'low-to-high') {
     return function (hotel1, hotel2) {
-      return hotel1.price - hotel2.price;
+      return hotel1.rating - hotel2.rating;
     };
   } else {
     return function (hotel1, hotel2) {
-      return hotel2.price - hotel1.price;
+      return hotel2.rating - hotel1.rating;
     };
   }
 }
